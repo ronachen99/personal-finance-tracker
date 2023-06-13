@@ -16,8 +16,11 @@ Expense.init(
       allowNull: false
     },
     expense_amount: {
-      type: DataTypes.FLOAT,
-      allowNull: false
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
+      validate: {
+        isDecimal: true,
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,

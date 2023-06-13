@@ -17,7 +17,10 @@ Income.init(
     },
     income_amount: {
       type: DataTypes.DECIMAL(10, 2),
-      allowNull: false
+      allowNull: false,
+      validate: {
+        isDecimal: true
+      }
     },
     date_created: {
       type: DataTypes.DATE,
