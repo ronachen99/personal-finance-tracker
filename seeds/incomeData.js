@@ -18,5 +18,5 @@ const incomeData = [
   }
 ];
 
-const seedIncome = () => User.bulkCreate(incomeData);
+const seedIncome = () => Income.bulkCreate(incomeData);
 module.exports = seedIncome;
