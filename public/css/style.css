@@ -1,0 +1,10 @@
+body {
+  font-family: 'Patrick Hand', cursive;
+  background-image: url(../assets/images/background.png);
+  background-size: contain;
+}
+
+h1,
+h2 {
+  font-family: 'Moo Lah Lah', cursive;
+}
