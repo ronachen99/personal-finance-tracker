@@ -16,26 +16,6 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-// Update Income by Id
-
-router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const incomeData = await Income.update(req.body, {
-      where: {
-        id: req.params.id
-      }
-    });
-
-    if (!incomeData[0]) {
-      res.status(404).json({ message: 'No expense found' });
-      return;
-    }
-    res.status(200).json(incomeData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // Delete expense by Id
 
 router.delete('/:id', withAuth, async (req, res) => {
