@@ -8,3 +8,19 @@ h1,
 h2 {
   font-family: 'Moo Lah Lah', cursive;
 }
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  font-size: 100%;
+  background-color: transparent;
+}
+
+.no-button:hover {
+  color: #c6c6c6;
+  text-decoration: underline;
+}
