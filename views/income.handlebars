@@ -70,8 +70,7 @@
         {{#each incomes as |income|}}
           <div class='row mb-2'>
             <div class='col-md-8'>
-              <h4><a href='/income/{{income.id}}'>{{income.name}}
-                  {{income.amount}}</a></h4>
+              <h4>{{income.name}} - ${{income.amount}}</h4>
             </div>
             <div class='col-md-4'>
               <button
