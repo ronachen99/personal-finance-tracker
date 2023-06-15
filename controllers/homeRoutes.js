@@ -28,27 +28,6 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-// Use withAuth middleware to prevent access to route
-// router.get('/report', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged-in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Expense }, { model: Income }]
-//     });
-
-//     // Serialize the data
-//     const user = userData.get({ plain: true });
-
-//     res.render('report', {
-//       ...user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 //Use withAuth middleware to prevent access to route
 router.get('/expense', withAuth, async (req, res) => {
   try {
@@ -68,6 +47,7 @@ router.get('/expense', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get('/income', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -80,6 +60,45 @@ router.get('/income', withAuth, async (req, res) => {
 
     res.render('income', {
       ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/report', withAuth, async (req, res) => {
+  try {
+    res.render('report', { logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Use withAuth middleware to prevent access to route
+router.get('/report/:year/:month', withAuth, async (req, res) => {
+  try {
+    const incomeData = await Income.findAll({
+      where: {
+        user_id: req.session.user_id,
+        month: req.params.month,
+        year: req.params.year
+      }
+    });
+    const incomes = incomeData.map((income) => income.get({ plain: true }));
+
+    const expenseData = await Expense.findAll({
+      where: {
+        user_id: req.session.user_id,
+        month: req.params.month,
+        year: req.params.year
+      }
+    });
+
+    const expenses = expenseData.map((expense) => expense.get({ plain: true }));
+    res.render('report', {
+      incomes,
+      expenses,
       logged_in: true
     });
   } catch (err) {
