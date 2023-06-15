@@ -1,26 +1,58 @@
-body {
-  font-family: 'Patrick Hand', cursive;
-  background-image: url(../assets/images/background.png);
-  background-size: contain;
+:root {
+  --primary: #626262;
+  --secondary: #000000;
+  --tertiary: rgb(234, 234, 234);
 }
 
-h1,
-h2 {
+body {
+  font-family: 'Patrick Hand', cursive;
+  background-color: var(--primary);
+  background-image: url(../assets/images/background.png);
+  background-size: contain;
+  color: var(--tertiary);
+}
+
+h1 {
   font-family: 'Moo Lah Lah', cursive;
 }
 
-.no-button {
+h1 {
+  font-size: 60px;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  color: var(--tertiary);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: center;
+}
+
+.no-bg {
   background: none;
   border: none;
-  padding: 0;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.55);
   text-decoration: none;
   font-size: 100%;
   background-color: transparent;
+  padding: 0px 15px;
 }
 
-.no-button:hover {
-  color: #c6c6c6;
-  text-decoration: underline;
+#no-hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hover-bg:hover {
+  background-color: var(--secondary);
+}
+
+.no-bg:focus {
+  background-color: transparent;
+}
+
+header {
+  margin: 2%;
 }
