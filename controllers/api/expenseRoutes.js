@@ -6,10 +6,20 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
+    const { date_created, ...otherFields } = req.body;
+    const expenseDate = new Date(date_created);
+
+    const year = expenseDate.getFullYear();
+    const month = expenseDate.getMonth() + 1;
+
     const newExpense = await Expense.create({
-      ...req.body,
+      ...otherFields,
+      date_created,
+      year,
+      month,
       user_id: req.session.user_id
     });
+
     res.status(200).json(newExpense);
   } catch (err) {
     res.status(400).json(err);

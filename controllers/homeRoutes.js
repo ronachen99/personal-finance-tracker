@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Expense, Income } = require('../models');
+const { Expense, Income } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -29,25 +29,25 @@ router.get('/signup', (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/report', withAuth, async (req, res) => {
-  try {
-    // Find the logged-in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Expense }, { model: Income }]
-    });
+// router.get('/report', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged-in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Expense }, { model: Income }]
+//     });
 
-    // Serialize the data
-    const user = userData.get({ plain: true });
+//     // Serialize the data
+//     const user = userData.get({ plain: true });
 
-    res.render('report', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('report', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // Use withAuth middleware to prevent access to route
 router.get('/income', withAuth, async (req, res) => {
