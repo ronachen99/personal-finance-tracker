@@ -37,17 +37,12 @@ Expense.init(
     month: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        min: 1,
-        max: 12
-      }
+      defaultValue: () => new Date().getMonth() + 1
     },
     year: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        isInt: true
-      }
+      defaultValue: () => new Date().getFullYear()
     }
   },
   {

@@ -13,9 +13,10 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      alert('ᕙ[⎚◡⎚]ᕗ success');
       document.location.replace('/');
     } else {
-      alert(response.statusText);
+      alert('┐(⎚ ꞈ ⎚)┌ something went wrong');
     }
   }
 };
