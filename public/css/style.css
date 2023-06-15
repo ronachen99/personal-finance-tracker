@@ -17,6 +17,12 @@ main {
   padding: 2%;
 }
 
+.cow {
+  background-color: white;
+  opacity: 90%;
+  border-radius: 2%;
+}
+
 button {
   background: none;
   border: none;
@@ -26,6 +32,10 @@ button {
   cursor: pointer;
   font-family: inherit;
   color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .navbar-item:hover,
