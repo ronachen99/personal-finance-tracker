@@ -1,94 +1,92 @@
-<main class=''>
-  <div class='container'>
-    <div class='d-flex justify-content-around align-items-center p-3'>
-      <h2 class='text-light'>My Expenses</h2>
+<div class='container'>
+  <div class='d-flex justify-content-around align-items-center p-3'>
+    <h2 class='text-light'>My Expenses</h2>
 
-      <!-- Button trigger modal -->
-      <button
-        type='button'
-        class='btn btn-primary'
-        data-toggle='modal'
-        data-target='#expenseModalCenter'
-      >
-        +
-      </button>
+    <!-- Button trigger modal -->
+    <button
+      type='button'
+      class='btn btn-primary'
+      data-toggle='modal'
+      data-target='#expenseModalCenter'
+    >
+      +
+    </button>
 
-      <!-- Modal -->
-      <div
-        class='modal fade'
-        id='expenseModalCenter'
-        tabindex='-1'
-        role='dialog'
-        aria-labelledby='expenseModalCenterTitle'
-        aria-hidden='true'
-      >
-        <div class='modal-dialog modal-dialog-centered' role='document'>
-          <div class='modal-content'>
-            <div class='modal-header'>
-              <h5 class='modal-title' id='expenseModalLongTitle'>add expense</h5>
-            </div>
-            <div class='modal-body'>
-              <!-- Expense Form -->
-              <form class='expenseForm' id='expenseForm'>
-                <div class='form-group'>
-                  <label for='expenseName'>expense name</label>
-                  <input
-                    type='text'
-                    class='form-input'
-                    id='expenseName'
-                    name='expenseName'
-                  />
-                </div>
-                <div class='form-group'>
-                  <label for='expenseAmount'>expense amount</label>
-                  <input
-                    type='number'
-                    class='form-input'
-                    id='expenseAmount'
-                    name='expenseAmount'
-                  />
-                </div>
-                <button
-                  type='submit'
-                  class='btn btn-secondary'
-                  data-dismiss='modal'
-                >close</button>
-                <button
-                  type='submit'
-                  class='btn btn-secondary'
-                  id='submit'
-                >add</button>
-              </form>
-            </div>
+    <!-- Modal -->
+    <div
+      class='modal fade'
+      id='expenseModalCenter'
+      tabindex='-1'
+      role='dialog'
+      aria-labelledby='expenseModalCenterTitle'
+      aria-hidden='true'
+    >
+      <div class='modal-dialog modal-dialog-centered' role='document'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h5 class='modal-title' id='expenseModalLongTitle'>add expense</h5>
+          </div>
+          <div class='modal-body'>
+            <!-- Expense Form -->
+            <form class='expenseForm' id='expenseForm'>
+              <div class='form-group'>
+                <label for='expenseName'>expense name</label>
+                <input
+                  type='text'
+                  class='form-input'
+                  id='expenseName'
+                  name='expenseName'
+                />
+              </div>
+              <div class='form-group'>
+                <label for='expenseAmount'>expense amount</label>
+                <input
+                  type='number'
+                  class='form-input'
+                  id='expenseAmount'
+                  name='expenseAmount'
+                />
+              </div>
+              <button
+                type='submit'
+                class='btn btn-secondary'
+                data-dismiss='modal'
+              >close</button>
+              <button
+                type='submit'
+                class='btn btn-secondary'
+                id='submit'
+              >add</button>
+            </form>
           </div>
         </div>
       </div>
-
-      {{#if expenses.length}}
-        <div class='col-md-6 expense-list'>
-          <h3>Expenses</h3>
-
-          {{#each expenses as |expense|}}
-            <div class='row mb-2'>
-              <div class='col-md-8'>
-                <h4><a
-                    href='/expense/{{expense.id}}'
-                  >{{expense.name}}{{expense.amount}}</a></h4>
-              </div>
-
-              <div class='col-md-4'>
-                <button
-                  class='btn btn-sm btn-danger'
-                  data-id='{{expense.id}}'
-                >DELETE</button>
-              </div>
-
-            </div>
-          {{/each}}
-        </div>
-      {{/if}}
     </div>
+
+    {{#if expenses.length}}
+      <div class='col-md-6 expense-list'>
+        <h3>Expenses</h3>
+
+        {{#each expenses as |expense|}}
+          <div class='row mb-2'>
+            <div class='col-md-8'>
+              <h4><a
+                  href='/expense/{{expense.id}}'
+                >{{expense.name}}{{expense.amount}}</a></h4>
+            </div>
+
+            <div class='col-md-4'>
+              <button
+                class='btn btn-sm btn-danger'
+                data-id='{{expense.id}}'
+              >DELETE</button>
+            </div>
+
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
   </div>
-</main>
+</div>
 
 <script src='./js/expense.js'></script>
