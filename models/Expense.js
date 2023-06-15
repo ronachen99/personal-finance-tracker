@@ -11,11 +11,11 @@ Expense.init(
       primaryKey: true,
       autoIncrement: true
     },
-    expense_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    expense_amount: {
+    amount: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
       validate: {
