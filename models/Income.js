@@ -11,11 +11,11 @@ Income.init(
       primaryKey: true,
       autoIncrement: true
     },
-    income_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    income_amount: {
+    amount: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
       validate: {

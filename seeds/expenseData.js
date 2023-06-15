@@ -2,18 +2,18 @@ const { Expense } = require('../models');
 
 const expenseData = [
   {
-    expense_name: 'Groceries',
-    expense_amount: 50.75,
+    name: 'Groceries',
+    amount: 50.75,
     user_id: 1
   },
   {
-    expense_name: 'Gasoline',
-    expense_amount: 35.5,
+    name: 'Gasoline',
+    amount: 35.5,
     user_id: 2
   },
   {
-    expense_name: 'Movie Tickets',
-    expense_amount: 25.0,
+    name: 'Movie Tickets',
+    amount: 25.0,
     user_id: 3
   }
 ];
