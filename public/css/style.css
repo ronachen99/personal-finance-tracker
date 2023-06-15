@@ -42,3 +42,8 @@ a:hover {
 #linethrough:hover {
   text-decoration: line-through;
 }
+
+#home-login {
+  display: flex;
+  flex-direction: column;
+}
