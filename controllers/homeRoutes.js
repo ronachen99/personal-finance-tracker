@@ -28,25 +28,4 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/report', withAuth, async (req, res) => {
-  try {
-    // Find the logged-in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Expense }, { model: Income }]
-    });
-
-    // Serialize the data
-    const user = userData.get({ plain: true });
-
-    res.render('report', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 module.exports = router;
