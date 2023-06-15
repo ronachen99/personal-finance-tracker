@@ -34,10 +34,9 @@
           </p>
         </div>
       </div>
-
       <!-- Hero footer: will stick at the bottom -->
+      {{#if logged_in}}
       <div class="hero-foot">
-
         <nav class="navnar" role="navigation" aria-label="main navigation">
           <div class="navbar-menu">
             <div class="navbar-end">
@@ -48,7 +47,7 @@
               <button class="navbar-item" id='logout'>log out</button>
             </div>
           </div>
-        </nav> {{#if logged_in}}
+        </nav>
         {{/if}}
       </div>
     </section>

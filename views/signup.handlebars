@@ -1,21 +1,25 @@
-<div class='col-md-6'>
+<div class='cow col-md-6'>
   <h2>sign up</h2>
-
   <form class='form signup-form'>
-    <div class='mb-3'>
-      <label for='name-signup' class='form-label'>name:</label>
-      <input type='text' class='form-control' id='name-signup' />
+    <div class="field">
+      <label for='name-signup' class='form-label label'>name</label>
+      <div class="control">
+        <input id='name-signup' class="input form-control is-dark" type="text" placeholder="Moo Moo">
+      </div>
     </div>
-    <div class='mb-3'>
-      <label for='email-signup'>email:</label>
-      <input type='email' class='form-control' id='email-signup' />
+    <div class="field">
+      <label for='email-signup' class="form-label label">email</label>
+      <div class="control">
+        <input id='email-signup' class="form-control input is-dark" type="email" placeholder="moomoo@gmail.com">
+      </div>
     </div>
-    <div class='mb-3'>
-      <label for='password-signup' class='form-label'>password:</label>
-      <input type='password' class='form-control' id='password-signup' />
+    <div class="field">
+      <label for='password-signup' class='form-label label'>password</label>
+      <div class="control"><input id='password-signup' class="form-control input  is-dark" type="password"
+          placeholder="super secret secret (must be 8 characters+)"></div>
     </div>
-    <button type='submit' class='linethrough btn'>sign up</button>
-    <a href='/login' id='no-hover' class='linethrough btn' role='button'>go back</a>
+    <button type='submit' class='btn'>sign up</button>
+    <a href='/login' id='no-hover' class='btn' role='button'>go back</a>
   </form>
 
 </div>
