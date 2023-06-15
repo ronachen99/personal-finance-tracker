@@ -1,0 +1,88 @@
+<div class='container'>
+  <div class='d-flex justify-content-around align-items-center p-3'>
+    <h2 class='text-light'>My Incomes</h2>
+
+    <!-- Button trigger modal -->
+    <button
+      type='button'
+      class='btn btn-primary'
+      data-toggle='modal'
+      data-target='#incomeModalCenter'
+    >
+      +
+    </button>
+
+    <!-- Modal -->
+    <div
+      class='modal fade'
+      id='incomeModalCenter'
+      tabindex='-1'
+      role='dialog'
+      aria-labelledby='incomeModalCenterTitle'
+      aria-hidden='true'
+    >
+      <div class='modal-dialog modal-dialog-centered' role='document'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h5 class='modal-title' id='incomeModalLongTitle'>add income</h5>
+          </div>
+          <div class='modal-body'>
+            <!-- Income Form -->
+            <form class='incomeForm' id='incomeForm'>
+              <div class='form-group'>
+                <label for='incomeName'>income name</label>
+                <input
+                  type='text'
+                  class='form-input'
+                  id='incomeName'
+                  name='incomeName'
+                />
+              </div>
+              <div class='form-group'>
+                <label for='incomeAmount'>income amount</label>
+                <input
+                  type='number'
+                  class='form-input'
+                  id='incomeAmount'
+                  name='incomeAmount'
+                />
+              </div>
+              <button
+                type='submit'
+                class='btn btn-secondary'
+                data-dismiss='modal'
+              >close</button>
+              <button
+                type='submit'
+                class='btn btn-secondary'
+                id='submit'
+              >add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{#if incomes.length}}
+      <div class='col-md-6 income-list'>
+        <h3>Incomes</h3>
+
+        {{#each incomes as |income|}}
+          <div class='row mb-2'>
+            <div class='col-md-8'>
+              <h4><a href='/income/{{income.id}}'>{{income.name}}</a></h4>
+            </div>
+            <div class='col-md-4'>
+              <button
+                class='btn btn-sm btn-danger'
+                data-id='{{income.id}}'
+              >DELETE</button>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+</div>
+
+<script src='./js/income.js'></script>
