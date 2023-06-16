@@ -1,23 +1,34 @@
 <div class='cow col-md-6'>
-  <h2>log in</h2>
-  <form class='form login-form'>
-    <div class='field'>
-      <label for='email-login' class='form-label label'>email:</label>
-      <div class="control">
-        <input type='email' class='input form-control is-dark' id='email-login' placeholder="moomoo@gmail.com" />
+  <div class="container">
+    <h2>log in</h2>
+    <form class='form login-form'>
+      <div class='field'>
+        <label for='email-login' class='form-label label'>email:</label>
+        <div class='control'>
+          <input
+            type='email'
+            class='input form-control is-dark'
+            id='email-login'
+            placeholder='moomoo@gmail.com'
+          />
+        </div>
       </div>
-    </div>
-    <div class='field'>
-      <label for='password-login' class='form-label label'>password:</label>
-      <div class="control">
-        <input type='password' class='form-control input is-dark' id='password-login'
-          placeholder="we don't know ur pw so gl" />
+      <div class='field'>
+        <label for='password-login' class='form-label label'>password:</label>
+        <div class='control'>
+          <input
+            type='password'
+            class='form-control input is-dark'
+            id='password-login'
+            placeholder="we don't know ur pw so gl"
+          />
+        </div>
       </div>
-    </div>
-    <button type='submit' class='btn'>log in</button>
-    <a href='/signup' class='btn' id="no-deco" role='button'>sign up</a>
-  </form>
-
+      <button type='submit' class='btn'>log in</button>
+      <a href='/signup' class='btn' id='no-deco' role='button'>sign up</a>
+    </form>
+  </div>
+  <div class="notification-container"></div>
 </div>
 
 <script src='./js/login.js'></script>

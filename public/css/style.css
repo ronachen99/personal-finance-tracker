@@ -50,3 +50,14 @@ a:hover {
 #logout:hover {
   background-color: #f8c31d;
 }
+
+.fade-out {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
