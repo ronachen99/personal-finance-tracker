@@ -1,7 +1,10 @@
-body {
-  font-family: 'Patrick Hand', cursive;
+html {
   background-image: url(../assets/images/background.png);
   background-size: contain;
+}
+
+body {
+  font-family: 'Patrick Hand', cursive;
 }
 
 h1 {
@@ -10,7 +13,8 @@ h1 {
 }
 
 h2 {
-  text-shadow: 2px 0 #f8c31d;
+  font-family: 'Moo Lah Lah', cursive;
+  font-size: 50px;
 }
 
 main {
@@ -18,14 +22,14 @@ main {
   flex-wrap: wrap;
   align-self: center;
   justify-content: center;
-  padding: 2%;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .welcome {
-  font-size: 20px;
+  font-size: 25px;
   text-align: justify;
-  padding: 2%;
-
 }
 
 .cow {
@@ -33,7 +37,6 @@ main {
   opacity: 90%;
   border-radius: 2%;
   padding: 2%;
-  margin: 2%;
 }
 
 button {
@@ -80,4 +83,9 @@ a:hover {
   100% {
     opacity: 0;
   }
+}
+
+img {
+  border-radius: 2%;
+  opacity: 100%;
 }
