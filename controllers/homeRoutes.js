@@ -2,11 +2,11 @@ const router = require('express').Router();
 const { User, Expense, Income } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     if (req.session.logged_in) {
       const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
+        attributes: { exclude: ['password'] }
       });
       const user = userData.get({ plain: true });
       res.render('homepage', {
