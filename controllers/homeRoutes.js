@@ -2,11 +2,11 @@ const router = require('express').Router();
 const { User, Expense, Income } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     if (req.session.logged_in) {
       const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
+        attributes: { exclude: ['password'] }
       });
       const user = userData.get({ plain: true });
       res.render('homepage', {
@@ -79,41 +79,50 @@ router.get('/income', withAuth, async (req, res) => {
 });
 
 router.get('/report', withAuth, async (req, res) => {
-  try {
-    res.render('report', { logged_in: req.session.logged_in });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+  const { month, year } = req.query;
+  if (!month || !year) {
+    try {
+      res.render('report', { logged_in: req.session.logged_in });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    try {
+      const incomeData = await Income.findAll({
+        where: {
+          user_id: req.session.user_id,
+          month: req.query.month,
+          year: req.query.year
+        }
+      });
+      const incomes = incomeData.map((income) => income.get({ plain: true }));
 
-// Use withAuth middleware to prevent access to route
-router.get('/report/:year/:month', withAuth, async (req, res) => {
-  try {
-    const incomeData = await Income.findAll({
-      where: {
-        user_id: req.session.user_id,
-        month: req.params.month,
-        year: req.params.year
-      }
-    });
-    const incomes = incomeData.map((income) => income.get({ plain: true }));
+      const expenseData = await Expense.findAll({
+        where: {
+          user_id: req.session.user_id,
+          month: req.query.month,
+          year: req.query.year
+        }
+      });
 
-    const expenseData = await Expense.findAll({
-      where: {
-        user_id: req.session.user_id,
-        month: req.params.month,
-        year: req.params.year
-      }
-    });
+      const expenses = expenseData.map((expense) =>
+        expense.get({ plain: true })
+      );
 
-    const expenses = expenseData.map((expense) => expense.get({ plain: true }));
-    res.render('report', {
-      incomes,
-      expenses,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
+      console.log({
+        incomes,
+        expenses,
+        logged_in: req.session.logged_in
+      });
+
+      res.render('report', {
+        incomes,
+        expenses,
+        logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
   }
 });
 

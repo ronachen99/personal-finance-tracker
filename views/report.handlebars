@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="d-flex justify-content-around align-items-center p-3">
+        <h2 class="text-light">Monthly Report</h2>
+        <form class="input-group mb-3" id="new-report">
+            <div class="field has-addons">
+                <div class="control is-expanded">
+                    <div class="select is-fullwidth is-rounded">
+                        <select id="month" name="month">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control is-expanded">
+                    <div class="select is-fullwidth is-rounded">
+                        <select id="year" name="year">
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
+                </div>
+                <button id='report-btn' type="submit" class="button is-primary">Choose</button>
+            </div>
+
+            <h2>Incomes</h2>
+            {{#if incomes.length}}
+            <ul>
+                {{#each incomes as |income| }}
+                <li>Income: {{income.amount}}</li>
+                <li>Description: {{income.name}}</li>
+
+                {{/each}}
+            </ul>
+            {{else}}
+            <p>No income data available.</p>
+            {{/if}}
+
+            <!-- Display expense data -->
+            <h2>Expenses</h2>
+            {{#if expenses.length}}
+            <ul>
+                {{#each expenses as |expense| }}
+                <li>Expense: {{expense.amount}}</li>
+                <li>Description: {{expense.name}}</li>
+                {{/each}}
+            </ul>
+            {{else}}
+            <p>No expense data available.</p>
+            {{/if}}
+    </div>
+</div>
+
+<script src="./js/report.js"></script>

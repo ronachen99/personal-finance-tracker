@@ -1,9 +1,12 @@
-<div class='is-full'>
-  <img src='./assets/images/cowpic.jpg' alt='Cow with money and sunglasses' />
-  {{#if logged_in}}
-    <div class='cow'>
-      <h2>welcome back {{name}}</h2>
-      <p>Welcome to Cash Cow, where your financial journey begins with a
+<div class="container">
+  <div {{#if logged_in}}class="columns cow" {{/if}}>
+    <div class="column is-flex is-justify-content-center">
+      <img src='./assets/images/cowpic.jpg' alt='Cow with money and sunglasses' />
+    </div>
+    {{#if logged_in}}
+    <div class="column">
+      <h2>welcome back {{name}} <img src='./assets/images/cow.png' alt='Cash cow icon' /></h2>
+      <p class="welcome">Welcome to Cash Cow, where your financial journey begins with a
         MOO-nificent twist! We want to take a moment to express our heartfelt
         gratitude for choosing our service to steer your money matters in the
         right direction. We understand that every penny counts, and we're
@@ -16,8 +19,10 @@
         make your finances grazefully flourish. Thank you for joining our herd
         and welcome to a world of financial prosperity!</p>
     </div>
-  {{/if}}
-  {{#unless logged_in}}
-    <a href='/login' id='home-login' class='btn' role='button'>log in</a>
-  {{/unless}}
+    {{else}}
+    <div class="is-flex is-justify-content-center is-align-items-end">
+      <a href='/login' id='home-login' class='button is-warning' role='button'>howdy</a>
+    </div>
+    {{/if}}
+  </div>
 </div>

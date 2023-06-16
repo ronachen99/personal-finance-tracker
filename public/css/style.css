@@ -1,7 +1,10 @@
-body {
-  font-family: 'Patrick Hand', cursive;
+html {
   background-image: url(../assets/images/background.png);
   background-size: contain;
+}
+
+body {
+  font-family: 'Patrick Hand', cursive;
 }
 
 h1 {
@@ -9,18 +12,31 @@ h1 {
   font-size: 85px;
 }
 
+h2 {
+  font-family: 'Moo Lah Lah', cursive;
+  font-size: 50px;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
   align-self: center;
   justify-content: center;
-  padding: 2%;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.welcome {
+  font-size: 25px;
+  text-align: justify;
 }
 
 .cow {
   background-color: white;
   opacity: 90%;
   border-radius: 2%;
+  padding: 2%;
 }
 
 button {
@@ -47,6 +63,29 @@ a:hover {
   color: #f8c31d
 }
 
-#logout:hover {
+#logout:hover,
+#home-login:hover,
+#btnhover:hover {
   background-color: #f8c31d;
+}
+
+.fade-out {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+img {
+  border-radius: 2%;
+  opacity: 100%;
 }
