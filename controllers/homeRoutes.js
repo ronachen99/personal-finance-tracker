@@ -2,11 +2,11 @@ const router = require('express').Router();
 const { User, Expense, Income } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     if (req.session.logged_in) {
       const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
+        attributes: { exclude: ['password'] }
       });
       const user = userData.get({ plain: true });
       res.render('homepage', {
@@ -88,6 +88,7 @@ router.get('/report', withAuth, async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/report/:year/:month', withAuth, async (req, res) => {
+  console.log(req);
   try {
     const incomeData = await Income.findAll({
       where: {
@@ -107,10 +108,17 @@ router.get('/report/:year/:month', withAuth, async (req, res) => {
     });
 
     const expenses = expenseData.map((expense) => expense.get({ plain: true }));
+
+    console.log({
+      incomes,
+      expenses,
+      logged_in: req.session.logged_in
+    });
+
     res.render('report', {
       incomes,
       expenses,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);

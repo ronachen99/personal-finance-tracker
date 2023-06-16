@@ -9,6 +9,10 @@ h1 {
   font-size: 85px;
 }
 
+h2 {
+  text-shadow: 2px 0 #f8c31d;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -17,10 +21,19 @@ main {
   padding: 2%;
 }
 
+.welcome {
+  font-size: 20px;
+  text-align: justify;
+  padding: 2%;
+
+}
+
 .cow {
   background-color: white;
   opacity: 90%;
   border-radius: 2%;
+  padding: 2%;
+  margin: 2%;
 }
 
 button {
@@ -47,7 +60,9 @@ a:hover {
   color: #f8c31d
 }
 
-#logout:hover {
+#logout:hover,
+#home-login:hover,
+#btnhover:hover {
   background-color: #f8c31d;
 }
 
@@ -58,6 +73,11 @@ a:hover {
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
