@@ -32,35 +32,34 @@
                         </select>
                     </div>
                 </div>
+                <button id='report-btn' type="submit" class="button is-primary">Choose</button>
             </div>
-        </form>
-        <button id='report-btn' type="submit" class="button is-primary">Choose</button>
 
-        {{!-- <h2>Incomes</h2>
-        {{#if incomes.length}}
-        <ul>
-            {{#each incomes as |income| }}
-            <li>Income: {{income.amount}}</li>
-            <li>Description: {{income.name}}</li>
+            <h2>Incomes</h2>
+            {{#if incomes.length}}
+            <ul>
+                {{#each incomes as |income| }}
+                <li>Income: {{income.amount}}</li>
+                <li>Description: {{income.name}}</li>
 
-            {{/each}}
-        </ul>
-        {{else}}
-        <p>No income data available.</p>
-        {{/if}}
+                {{/each}}
+            </ul>
+            {{else}}
+            <p>No income data available.</p>
+            {{/if}}
 
-        <!-- Display expense data -->
-        <h2>Expenses</h2>
-        {{#if expenses.length}}
-        <ul>
-            {{#each expenses as |expense| }}
-            <li>Expense: {{expense.amount}}</li>
-            <li>Description: {{expense.name}}</li>
-            {{/each}}
-        </ul>
-        {{else}}
-        <p>No expense data available.</p>
-        {{/if}} --}}
+            <!-- Display expense data -->
+            <h2>Expenses</h2>
+            {{#if expenses.length}}
+            <ul>
+                {{#each expenses as |expense| }}
+                <li>Expense: {{expense.amount}}</li>
+                <li>Description: {{expense.name}}</li>
+                {{/each}}
+            </ul>
+            {{else}}
+            <p>No expense data available.</p>
+            {{/if}}
     </div>
 </div>
 
