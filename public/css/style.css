@@ -61,7 +61,8 @@ a:hover {
 }
 
 #logout:hover,
-#home-login:hover {
+#home-login:hover,
+#btnhover:hover {
   background-color: #f8c31d;
 }
 
@@ -72,6 +73,11 @@ a:hover {
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
