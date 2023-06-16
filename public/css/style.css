@@ -38,12 +38,15 @@ a:hover {
   text-decoration: none;
 }
 
-.navbar-item:hover,
-#linethrough:hover {
-  text-decoration: line-through;
-}
-
 #home-login {
   display: flex;
   flex-direction: column;
+}
+
+.cash {
+  color: #f8c31d
+}
+
+#logout:hover {
+  background-color: #f8c31d;
 }

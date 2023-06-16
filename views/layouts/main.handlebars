@@ -22,36 +22,40 @@
 <body>
   <header>
     <section class="hero is-black is-small">
-      <!-- Hero head: will stick at the top -->
-      <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
           <p class="title">
-          <h1><a id='linethrough' href='/'>cash cow</a></h1>
+          <h1><a href='/'><span class="cash">cash</span> cow</a></h1>
           </p>
           <p class="subtitle">
             moore mooney please
           </p>
         </div>
       </div>
-      <!-- Hero footer: will stick at the bottom -->
       {{#if logged_in}}
-      <div class="hero-foot">
-        <nav class="navnar" role="navigation" aria-label="main navigation">
-          <div class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item" href='/'>home</a>
-              <a class="navbar-item" href='/income'>income</a>
-              <a class="navbar-item" href='/expense'>expense</a>
-              <a class="navbar-item" href='/report'>monthly report</a>
-              <button class="navbar-item" id='logout'>log out</button>
-            </div>
+      <nav class="navbar is-fullwidth">
+        <div class="navbar-brand">
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="cash navbar-start is-flex is-justify-content-space-between">
+            <a class="navbar-item" href="/income">Income</a>
+            <a class="navbar-item" href="/expense">Expense</a>
+            <a class="navbar-item" href="/report">Monthly Report</a>
           </div>
-        </nav>
-        {{/if}}
-      </div>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <button class="is-warning button" id="logout">Log Out</button>
+          </div>
+        </div>
+      </nav>
+      {{/if}}
     </section>
-
   </header>
   <main>
     <!-- Render the sub layout -->
@@ -63,6 +67,9 @@
   <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
     integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
     crossorigin='anonymous'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/js/bulma.min.js"></script>
+
+  <script src='./js/navbar.js'></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src='./js/logout.js'></script>
