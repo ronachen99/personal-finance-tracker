@@ -2,9 +2,20 @@ const router = require('express').Router();
 const { User, Expense, Income } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-    res.render('homepage', { logged_in: req.session.logged_in });
+    if (req.session.logged_in) {
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+      });
+      const user = userData.get({ plain: true });
+      res.render('homepage', {
+        logged_in: true,
+        ...user
+      });
+    } else {
+      res.render('homepage', { logged_in: false });
+    }
   } catch (err) {
     res.status(500).json(err);
   }
@@ -105,5 +116,8 @@ router.get('/report/:year/:month', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Fallback route for when a user attempts to visit routes that don't exist
+router.get('*', (req, res) => res.render('404'));
 
 module.exports = router;

@@ -1,27 +1,12 @@
-:root {
-  --primary: #626262;
-  --secondary: #000000;
-  --tertiary: rgb(234, 234, 234);
-}
-
 body {
   font-family: 'Patrick Hand', cursive;
-  background-color: var(--primary);
   background-image: url(../assets/images/background.png);
   background-size: contain;
-  color: var(--tertiary);
 }
 
 h1 {
   font-family: 'Moo Lah Lah', cursive;
-}
-
-h1 {
-  font-size: 60px;
-  width: 100%;
-  text-align: center;
-  align-content: center;
-  color: var(--tertiary);
+  font-size: 85px;
 }
 
 main {
@@ -29,30 +14,39 @@ main {
   flex-wrap: wrap;
   align-self: center;
   justify-content: center;
+  padding: 2%;
 }
 
-.no-bg {
+.cow {
+  background-color: white;
+  opacity: 90%;
+  border-radius: 2%;
+}
+
+button {
   background: none;
   border: none;
-  text-decoration: none;
-  font-size: 100%;
-  background-color: transparent;
-  padding: 0px 15px;
-}
-
-#no-hover {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
   color: inherit;
+}
+
+a:hover {
   text-decoration: none;
 }
 
-.hover-bg:hover {
-  background-color: var(--secondary);
+#home-login {
+  display: flex;
+  flex-direction: column;
 }
 
-.no-bg:focus {
-  background-color: transparent;
+.cash {
+  color: #f8c31d
 }
 
-header {
-  margin: 2%;
+#logout:hover {
+  background-color: #f8c31d;
 }
