@@ -60,6 +60,7 @@ a:hover {
   color: #f8c31d
 }
 
-#logout:hover {
+#logout:hover,
+#home-login:hover {
   background-color: #f8c31d;
 }
