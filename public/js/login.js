@@ -16,9 +16,7 @@ document
       if (response.ok) {
         const successNotification = document.createElement('div');
         successNotification.className = 'notification is-success';
-        successNotification.innerHTML = `
-      🤠 welcome back partner 🤠
-      `;
+        successNotification.innerHTML = `🤠 welcome back partner 🤠`;
 
         const notificationContainer = document.querySelector(
           '.notification-container'
@@ -38,9 +36,7 @@ document
       } else {
         const errorNotification = document.createElement('div');
         errorNotification.className = 'notification is-danger';
-        errorNotification.innerHTML = `
-        ┐(⎚ ꞈ ⎚)┌  wrong email or password
-      `;
+        errorNotification.innerHTML = `🧑🏽‍🌾 wrong email or password`;
 
         const notificationContainer = document.querySelector(
           '.notification-container'
