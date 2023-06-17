@@ -23,6 +23,7 @@
   <title>Cash Cow Finance Tracker</title>
 </head>
 
+
 <body>
   <header>
     <section class="hero is-black is-small">
@@ -47,14 +48,14 @@
         </div>
         <div id="navbarMenu" class="navbar-menu">
           <div class="cash navbar-start is-flex is-justify-content-space-between">
-            <a class="navbar-item" href="/">home</a>
-            <a class="navbar-item" href="/income">income</a>
-            <a class="navbar-item" href="/expense">expense</a>
-            <a class="navbar-item" href="/report">report</a>
+            <a class="navbar-item" href="/">HOME</a>
+            <a class="navbar-item" href="/income">INCOME</a>
+            <a class="navbar-item" href="/expense">EXPENSE</a>
+            <a class="navbar-item" href="/report">REPORT</a>
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
-              <button class="is-warning button" id="logout">log out</button>
+              <button class="is-warning button is-rounded" id="logout">LOGOUT</button>
             </div>
           </div>
         </div>
@@ -62,8 +63,8 @@
       {{/if}}
     </section>
   </header>
-  <div class="modal" id="logoutModal"></div>
   <main>
+    <div class="modal dark-cow" id="logoutModal"></div>
     {{!-- <!-- Render the sub layout --> --}}
     {{{body}}}
   </main>

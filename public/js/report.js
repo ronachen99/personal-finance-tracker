@@ -6,7 +6,7 @@ const searchFormHandler = async (event) => {
   if (month && year) {
     document.location.replace(`/report?year=${year}&month=${month}`);
   } else {
-    alert('Failed to create report');
+    res.status(500);
   }
 };
 

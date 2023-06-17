@@ -39,6 +39,13 @@ main {
   padding: 2%;
 }
 
+.dark-cow {
+  background-color: black;
+  opacity: 95%;
+  border-radius: 30px;
+  padding: 2%;
+}
+
 button {
   background: none;
   border: none;
