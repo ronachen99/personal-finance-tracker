@@ -53,7 +53,7 @@
         {{#if incomes.length}}
         <div class='columns'>
             {{#each incomes as |income|}}
-            <div class='column'>
+            <div class='animate__animated animate__flipInX column'>
                 <ul>
                     <div class='box custom-box'>
                         <li>Date: {{format_date income.date_created}} </li>
@@ -76,7 +76,7 @@
         {{#if expenses.length}}
         <div class='columns'>
             {{#each expenses as |expense|}}
-            <div class='column'>
+            <div class='animate__animated animate__flipInX column'>
                 <ul>
                     <div class='box custom-box'>
                         <li>Date: {{format_date expense.date_created}} </li>
