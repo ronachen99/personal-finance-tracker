@@ -27,9 +27,8 @@ main {
   width: 100%;
 }
 
-.welcome {
+p {
   font-size: 25px;
-  text-align: justify;
 }
 
 .cow {
@@ -59,11 +58,6 @@ button {
 
 a:hover {
   text-decoration: none;
-}
-
-#home-login {
-  display: flex;
-  flex-direction: column;
 }
 
 .cash {
@@ -98,6 +92,6 @@ img {
 }
 
 .custom-box {
-  background-color: lightgrey;
+  background-color: rgb(171, 171, 171);
   color: black;
 }
