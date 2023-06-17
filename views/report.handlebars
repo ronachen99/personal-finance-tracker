@@ -4,7 +4,7 @@
         <form id='new-report'>
             <div class='field has-addons'>
                 <div class='control is-expanded'>
-                    <div class='select is-fullwidth is-rounded'>
+                    <div class='select is-dark is-fullwidth is-rounded'>
                         <select id='month' name='month'>
                             <option selected>select month</option>
                             <option value='1'>1</option>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class='control is-expanded'>
-                    <div class='select is-fullwidth is-rounded'>
+                    <div class='select is-dark is-fullwidth is-rounded'>
                         <select id='year' name='year'>
                             <option selected>select year</option>
                             <option value='2023'>2023</option>
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="buttons is-right">
-                <button type="submit" class="button is-rounded is-dark">show me mooney</button>
+                <button type="submit" class="button is-outlined is-rounded is-dark">show me mooney</button>
             </div>
         </form>
     </div>
@@ -65,7 +65,7 @@
             {{/each}}
         </div>
         {{else}}
-        <p>No income data available.</p>
+        <p>well, I reckon there ain't no gold rush of income data 'round these parts, pardner</p>
         {{/if}}
     </div>
 </div>
@@ -88,7 +88,7 @@
             {{/each}}
         </div>
         {{else}}
-        <p>No expense data available.</p>
+        <p>well now, ain't got no dang-blamed expense data to be found, partner</p>
         {{/if}}
     </div>
 </div>

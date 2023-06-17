@@ -1,77 +1,62 @@
 <div class="container">
-  <div class="columns is-centered">
-    <div class="column is-half">
-      <h2 class="title is-light has-text-centered">my incomes</h2>
-
-      <div id="modal-js-example" class="modal">
-        <div class="modal-background"></div>
-
-        <div class="modal-content">
-
-          <div class="box">
-
-            <div class="container">
-              <h1 class="title has-text-centered">add income</h1>
-
-              <!-- income Form -->
-              <div class="columns is-centered">
-                <div class="column is-half">
-
-                  <form id="incomeForm" class="incomeForm box">
-                    <div class="field">
-                      <label class="label" for="incomeName">income name</label>
-                      <div class="control">
-                        <input class="input is-warning" type="text" id="incomeName" name="incomeName" />
-                      </div>
+  <div class="cow">
+    <h2>my incomes</h2>
+    <div id="modal-js-example" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <div class="container">
+            <h3 class="has-text-centered">add income</h3>
+            <!-- income Form -->
+            <div class="columns is-centered">
+              <div class="column is-half">
+                <form id="incomeForm" class="incomeForm box">
+                  <div class="field">
+                    <label class="label" for="incomeName">income name</label>
+                    <div class="control">
+                      <input class="input is-warning" type="text" id="incomeName" name="incomeName" />
                     </div>
-
-                    <div class="field">
-                      <label class="label" for="incomeAmount">income amount</label>
-                      <div class="control">
-                        <input class="input is-warning" type="number" id="incomeAmount" name="incomeAmount" min="0" />
-                      </div>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="incomeAmount">income amount</label>
+                    <div class="control">
+                      <input class="input is-warning" type="number" id="incomeAmount" name="incomeAmount" min="0" />
                     </div>
-
-                    <div class=" field is-grouped">
-                      <div class="control">
-                        <button class="button is-warning" type="submit" id="submit">
-                          add income
-                        </button>
-                      </div>
-                      <div class="control">
-                        <button class="button is-secondary" type="submit">
-                          close
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+                  </div>
+                  <div class="control buttons is-small is-right">
+                    <button class="button is-rounded is-warning is-outlined" type="submit" id="submit">
+                      🤑
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {{#if incomes.length}}
-      <div class="income-list box">
-        <h3 class="title">Income List</h3>
-        {{#each incomes as |income|}}
-        <div class="columns mb-2">
-          <div class="column">
-            <h4>{{income.name}} - ${{income.amount}}</h4>
+    </div>
+    {{#if incomes.length}}
+    <div class="income-list columns">
+      {{#each incomes as |income|}}
+      <div class="column">
+        <ul>
+          <div class='box custom-box'>
+            <li>Date: {{format_date income.date_created}} </li>
+            <li>Description: {{income.name}}</li>
+            <li>Income: ${{income.amount}}</li>
           </div>
-          <div class="column">
-            <button class="button is-warning is-small" data-id="{{income.id}}">delete</button>
-          </div>
+        </ul>
+        <div class='buttons is-right'>
+          <button class="button is-danger is-outlined is-rounded is-small" data-id="{{income.id}}">X</button>
         </div>
-        {{/each}}
       </div>
-      {{/if}}
-      <!-- Button trigger modal -->
-      <div class="buttons is-centered is-flex-direction-column is-align-items-center">
-        <button type="submit" class="js-modal-trigger button is-warning" data-target="modal-js-example">+</button>
-      </div>
-
+      {{/each}}
+    </div>
+    {{/if}}
+    <!-- Button trigger modal -->
+    <div class="buttons is-centered is-flex-direction-column is-align-items-center">
+      <button type="submit" class="js-modal-trigger button is-dark is-outlined is-rounded"
+        data-target="modal-js-example">+</button>
     </div>
   </div>
 </div>
