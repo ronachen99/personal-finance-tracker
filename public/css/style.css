@@ -34,8 +34,8 @@ main {
 
 .cow {
   background-color: white;
-  opacity: 90%;
-  border-radius: 2%;
+  opacity: 95%;
+  border-radius: 30px;
   padding: 2%;
 }
 
@@ -88,4 +88,9 @@ a:hover {
 img {
   border-radius: 2%;
   opacity: 100%;
+}
+
+.custom-box {
+  background-color: lightgrey;
+  color: black;
 }

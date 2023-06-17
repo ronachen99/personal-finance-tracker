@@ -1,24 +1,27 @@
 <div class="container">
-  <div {{#if logged_in}}class="columns cow" {{/if}}>
-    <div class="column is-flex is-justify-content-center">
-      <img src='./assets/images/cowpic.jpg' alt='Cow with money and sunglasses' />
+  <div {{#if logged_in}} class="cow">
+    <div class="columns">{{/if}}
+      <div class="column is-flex is-justify-content-center">
+        <img src='./assets/images/cowpic.jpg' alt='Cow with money and sunglasses' />
+      </div>
+      {{#if logged_in}}
+      <div class="column">
+        <h2>welcome back {{name}} <img src='./assets/images/cow.png' alt='Cash cow icon' /></h2>
+        <p class="welcome">Welcome to Cash Cow, where your financial journey begins with a
+          MOO-nificent twist! We want to take a moment to express our heartfelt
+          gratitude for choosing our service to steer your money matters in the
+          right direction. We understand that every penny counts, and we're
+          thrilled to be your trusted companion along this financial voyage. At
+          Cash Cow, we believe in providing udderly outstanding solutions that
+          help you make the most of your hard-earned MOOney. Whether you're saving
+          for a cozy pasture or striving for long-term financial stability, our
+          platform offers a range of tail-or-made tools to cater to your unique
+          needs. So, grab the bull by the horns and embark on a journey that will
+          make your finances grazefully flourish. Thank you for joining our herd
+          and welcome to a world of financial prosperity!</p>
+      </div>
     </div>
-    {{#if logged_in}}
-    <div class="column">
-      <h2>welcome back {{name}} <img src='./assets/images/cow.png' alt='Cash cow icon' /></h2>
-      <p class="welcome">Welcome to Cash Cow, where your financial journey begins with a
-        MOO-nificent twist! We want to take a moment to express our heartfelt
-        gratitude for choosing our service to steer your money matters in the
-        right direction. We understand that every penny counts, and we're
-        thrilled to be your trusted companion along this financial voyage. At
-        Cash Cow, we believe in providing udderly outstanding solutions that
-        help you make the most of your hard-earned MOOney. Whether you're saving
-        for a cozy pasture or striving for long-term financial stability, our
-        platform offers a range of tail-or-made tools to cater to your unique
-        needs. So, grab the bull by the horns and embark on a journey that will
-        make your finances grazefully flourish. Thank you for joining our herd
-        and welcome to a world of financial prosperity!</p>
-    </div>
+
     {{else}}
     <div class="is-flex is-justify-content-center is-align-items-end">
       <a href='/login' id='home-login' class='button is-warning' role='button'>howdy</a>
