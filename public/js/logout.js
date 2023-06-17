@@ -5,7 +5,7 @@ const logout = async () => {
   logoutModal.classList.add('is-active');
 
   const successNotification = document.createElement('div');
-  successNotification.className = 'notification is-success';
+  successNotification.className = 'notification is-black';
   successNotification.innerHTML = `🤠 safe travels, partner 🤠`;
 
   // Get the notification container within the modal
