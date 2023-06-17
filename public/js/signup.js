@@ -13,10 +13,42 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      alert('ᕙ[⎚◡⎚]ᕗ success');
-      document.location.replace('/');
+      const successNotification = document.createElement('div');
+      successNotification.className = 'notification is-success';
+      successNotification.innerHTML = `🤠 welcome aboard, partner 🤠`;
+
+      const notificationContainer = document.querySelector(
+        '.notification-container'
+      );
+      notificationContainer.appendChild(successNotification);
+
+      setTimeout(function () {
+        successNotification.classList.add('fade-out');
+        setTimeout(function () {
+          document.location.replace('/');
+        }, 800);
+      }, 800);
+
+      successNotification.addEventListener('animationend', function () {
+        successNotification.parentNode.removeChild(successNotification);
+      });
     } else {
-      alert('┐(⎚ ꞈ ⎚)┌ something went wrong');
+      const errorNotification = document.createElement('div');
+      errorNotification.className = 'notification is-danger';
+      errorNotification.innerHTML = `🧑🏽‍🌾 it seems there's been a little hiccup 🧑🏽‍🌾`;
+
+      const notificationContainer = document.querySelector(
+        '.notification-container'
+      );
+      notificationContainer.appendChild(errorNotification);
+
+      setTimeout(function () {
+        errorNotification.classList.add('fade-out');
+      }, 1750);
+
+      errorNotification.addEventListener('animationend', function () {
+        errorNotification.parentNode.removeChild(errorNotification);
+      });
     }
   }
 };

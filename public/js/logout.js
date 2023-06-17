@@ -6,7 +6,7 @@ const logout = async () => {
 
   const successNotification = document.createElement('div');
   successNotification.className = 'notification is-success';
-  successNotification.innerHTML = `🤠 safe travels partner 🤠`;
+  successNotification.innerHTML = `🤠 safe travels, partner 🤠`;
 
   // Get the notification container within the modal
   const notificationContainer = logoutModal;
@@ -27,7 +27,7 @@ const logout = async () => {
   } else {
     const errorNotification = document.createElement('div');
     errorNotification.className = 'notification is-danger';
-    errorNotification.innerHTML = `🧑🏽‍🌾 sorry, can't let u go`;
+    errorNotification.innerHTML = `🧑🏽‍🌾 it seems there's been a little hiccup 🧑🏽‍🌾`;
 
     const notificationContainer = document.querySelector(
       '.notification-container'

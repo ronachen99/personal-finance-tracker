@@ -32,7 +32,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/income');
     } else {
-      alert('Failed to delete income');
+      alert(`🧑🏽‍🌾 it seems there's been a little hiccup 🧑🏽‍🌾`);
     }
   }
 };

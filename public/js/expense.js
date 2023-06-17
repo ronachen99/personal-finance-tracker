@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/expense');
     } else {
-      alert('Failed to create expense');
+      alert(`🧑🏽‍🌾 it seems there's been a little hiccup 🧑🏽‍🌾`);
     }
   }
 };
