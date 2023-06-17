@@ -27,9 +27,8 @@ main {
   width: 100%;
 }
 
-.welcome {
+p {
   font-size: 25px;
-  text-align: justify;
 }
 
 .cow {
@@ -61,11 +60,6 @@ a:hover {
   text-decoration: none;
 }
 
-#home-login {
-  display: flex;
-  flex-direction: column;
-}
-
 .cash {
   color: #f8c31d
 }
@@ -82,6 +76,16 @@ a:hover {
   animation-fill-mode: forwards;
 }
 
+img {
+  border-radius: 30px;
+  opacity: 100%;
+}
+
+.custom-box {
+  background-color: rgb(171, 171, 171);
+  color: black;
+}
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -92,12 +96,6 @@ a:hover {
   }
 }
 
-img {
-  border-radius: 30px;
-  opacity: 100%;
-}
-
-.custom-box {
-  background-color: lightgrey;
-  color: black;
+.animate__animated.animate__fadeIn {
+  --animate-duration: 3s;
 }
