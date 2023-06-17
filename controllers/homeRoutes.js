@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 const { User, Expense, Income } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -93,6 +94,16 @@ router.get('/report', withAuth, async (req, res) => {
           user_id: req.session.user_id,
           month: req.query.month,
           year: req.query.year
+        },
+        attributes: {
+          include: [
+            [
+              sequelize.literal(
+                `(SELECT SUM(amount) FROM income WHERE user_id = ${req.session.user_id} AND month = '${req.query.month}' AND year = '${req.query.year}')`
+              ),
+              'totalIncome'
+            ]
+          ]
         }
       });
       const incomes = incomeData.map((income) => income.get({ plain: true }));
@@ -102,6 +113,16 @@ router.get('/report', withAuth, async (req, res) => {
           user_id: req.session.user_id,
           month: req.query.month,
           year: req.query.year
+        },
+        attributes: {
+          include: [
+            [
+              sequelize.literal(
+                `(SELECT SUM(amount) FROM expense WHERE user_id = ${req.session.user_id} AND month = '${req.query.month}' AND year = '${req.query.year}')`
+              ),
+              'totalExpense'
+            ]
+          ]
         }
       });
 

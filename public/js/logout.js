@@ -6,9 +6,7 @@ const logout = async () => {
 
   const successNotification = document.createElement('div');
   successNotification.className = 'notification is-success';
-  successNotification.innerHTML = `
-    🤠 safe travels 🤠
-  `;
+  successNotification.innerHTML = `🤠 safe travels partner 🤠`;
 
   // Get the notification container within the modal
   const notificationContainer = logoutModal;
@@ -16,8 +14,8 @@ const logout = async () => {
   // Append the success notification to the container
   notificationContainer.appendChild(successNotification);
 
-  // Wait for 2000 milliseconds (2 seconds) before performing the logout action
-  await new Promise(resolve => setTimeout(resolve, 1750));
+  // Wait for 1750 milliseconds before performing the logout action
+  await new Promise((resolve) => setTimeout(resolve, 1750));
 
   const response = await fetch('/api/users/logout', {
     method: 'POST',
@@ -27,7 +25,22 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace('/');
   } else {
-    alert('┐(⎚ ꞈ ⎚)┌ something went wrong');
+    const errorNotification = document.createElement('div');
+    errorNotification.className = 'notification is-danger';
+    errorNotification.innerHTML = `🧑🏽‍🌾 sorry, can't let u go`;
+
+    const notificationContainer = document.querySelector(
+      '.notification-container'
+    );
+    notificationContainer.appendChild(errorNotification);
+
+    setTimeout(function () {
+      errorNotification.classList.add('fade-out');
+    }, 1750);
+
+    errorNotification.addEventListener('animationend', function () {
+      errorNotification.parentNode.removeChild(errorNotification);
+    });
   }
 };
 
