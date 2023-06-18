@@ -130,12 +130,6 @@ router.get('/report', withAuth, async (req, res) => {
         expense.get({ plain: true })
       );
 
-      console.log({
-        incomes,
-        expenses,
-        logged_in: req.session.logged_in
-      });
-
       res.render('report', {
         incomes,
         expenses,
