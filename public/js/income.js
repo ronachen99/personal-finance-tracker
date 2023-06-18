@@ -1,10 +1,13 @@
+// Handle the form submission for creating a new income
 const newFormHandler = async (event) => {
   event.preventDefault();
 
+  // Get the values from the income form inputs
   const name = document.querySelector('#incomeName').value.trim();
   const amount = document.querySelector('#incomeAmount').value.trim();
 
   if (name && amount) {
+    // Send a POST request to the server to create a new income
     const response = await fetch(`/api/incomes`, {
       method: 'POST',
       body: JSON.stringify({ name, amount }),
@@ -21,10 +24,12 @@ const newFormHandler = async (event) => {
   }
 };
 
+// Handle the click event for the delete button of an income
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
+    // Send a DELETE request to the server to delete the specified income
     const response = await fetch(`/api/incomes/${id}`, {
       method: 'DELETE'
     });
@@ -37,6 +42,7 @@ const delButtonHandler = async (event) => {
   }
 };
 
+// Add event listeners to the form submission and list delete button
 document
   .querySelector('.incomeForm')
   .addEventListener('submit', newFormHandler);

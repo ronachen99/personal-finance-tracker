@@ -1,5 +1,7 @@
+// Import the Income model from the models directory
 const { Income } = require('../models');
 
+// Defining an array of income data objects
 const incomeData = [
   {
     name: 'Salary',
@@ -18,5 +20,6 @@ const incomeData = [
   }
 ];
 
+// Define the function to seed the Income table with the expenseData array
 const seedIncome = () => Income.bulkCreate(incomeData);
 module.exports = seedIncome;

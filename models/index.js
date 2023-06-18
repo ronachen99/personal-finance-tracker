@@ -1,7 +1,9 @@
+// Import the User, Income, and Expense models
 const User = require('./User');
 const Income = require('./Income');
 const Expense = require('./Expense');
 
+// Define the associations between models
 User.hasMany(Income, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'

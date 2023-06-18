@@ -1,10 +1,14 @@
+// Import the needed modules and connection
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// Create the Income model by extending the Sequelize Model class
 class Income extends Model {}
 
+// Initialize the Expense model
 Income.init(
   {
+    // Assign the id, name, amount, date created, user id, month, and year attributes
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,

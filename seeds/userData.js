@@ -1,5 +1,7 @@
+// Import the User model from the models directory
 const { User } = require('../models');
 
+// Defining an array of user data objects
 const userData = [
   {
     name: 'Sal',
@@ -18,6 +20,7 @@ const userData = [
   }
 ];
 
+// Define a function to seed the User table with the userData array
 const seedUser = () =>
   User.bulkCreate(userData, {
     individualHooks: true,

@@ -1,21 +1,37 @@
 <div class='cow col-md-6'>
   <h2>log in</h2>
+  {{! This form holds all of the login fields }}
   <form class='form login-form'>
     <div class='field'>
       <label for='email-login' class='form-label label'>email</label>
       <div class='control'>
-        <input type='email' class='input form-control is-dark' id='email-login' placeholder='moomoo@gmail.com' />
+        <input
+          type='email'
+          class='input form-control is-dark'
+          id='email-login'
+          placeholder='moomoo@gmail.com'
+        />
       </div>
     </div>
     <div class='field'>
       <label for='password-login' class='form-label label'>password</label>
       <div class='control'>
-        <input type='password' class='form-control input is-dark' id='password-login'
-          placeholder="we don't know ur pw so gl" />
+        <input
+          type='password'
+          class='form-control input is-dark'
+          id='password-login'
+          placeholder="we don't know ur pw so gl"
+        />
       </div>
     </div>
-    <div class="buttons is-right">
-      <a href='/signup' class='button is-rounded is-warning' id='btnhover' role='button'>TAKE ME TO SIGN UP</a>
+    <div class='buttons is-right'>
+      {{! If the user is new, this button redirects them to the signup page }}
+      <a
+        href='/signup'
+        class='button is-rounded is-warning'
+        id='btnhover'
+        role='button'
+      >TAKE ME TO SIGN UP</a>
       <button type='submit' class='button is-rounded is-dark'>LOG IN</button>
     </div>
   </form>

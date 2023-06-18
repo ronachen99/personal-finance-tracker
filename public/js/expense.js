@@ -1,10 +1,13 @@
+// Handle the form submission for creating a new expense
 const newFormHandler = async (event) => {
   event.preventDefault();
 
+  // Get the values from the expense form inputs
   const name = document.querySelector('#expenseName').value.trim();
   const amount = document.querySelector('#expenseAmount').value.trim();
 
   if (name && amount) {
+    // Send a POST request to the server to create a new expense
     const response = await fetch(`/api/expenses`, {
       method: 'POST',
       body: JSON.stringify({ name, amount }),
@@ -21,10 +24,12 @@ const newFormHandler = async (event) => {
   }
 };
 
+// Handle the click event for the delete button of an expense
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
+    // Send a DELETE request to the server to delete the specified expense
     const response = await fetch(`/api/expenses/${id}`, {
       method: 'DELETE'
     });
@@ -37,6 +42,7 @@ const delButtonHandler = async (event) => {
   }
 };
 
+// Add event listeners to the form submission and list delete button
 document
   .querySelector('.expenseForm')
   .addEventListener('submit', newFormHandler);
