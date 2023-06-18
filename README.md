@@ -11,6 +11,7 @@ The objective behind this application is to develop a web-based platform enbalin
 <br>
 
 ## Table of Contents
+
 - [Description](#description)
 - [Table of Contents](#table-of-contents)
 - [Demonstration](#demonstration)
@@ -27,16 +28,25 @@ The objective behind this application is to develop a web-based platform enbalin
 ## Demonstration
 
 Application Demonstration:\
-Watch it on [Google Drive](link here).
+Watch it on [Google Drive](https://drive.google.com/file/d/1hGhDxQ8W1MZIz4pS4DPlYim5_tXz3xx9/view).
 
 Application Preview:\
-![Demonstration of a user going through an interactive finance tracker, logging in and starting over](./assets/images/login)
 
-![Demonstration of a user going through an interactive finance tracker, adding and deleting an income and starting over](./assets/images/income)
+### Login Page
 
-![Demonstration of a user going through an interactive finance tracker, adding and deleting an expense and starting over](./assets/images/expense)
+![Demonstration of a user going through an interactive finance tracker, logging in and starting over](./public/assets/images/SS2_LoginPage.png)
 
-![Demonstration of a user going through an interactive finance tracker, searching for monthly report, then logout and over](./assets/images/report)
+### Income Page
+
+![Demonstration of a user going through an interactive finance tracker, adding and deleting an income and starting over](./public/assets/images/SS7_IncomePage-IncomeList.png)
+
+### Expense Page
+
+![Demonstration of a user going through an interactive finance tracker, adding and deleting an expense and starting over](./public/assets/images/SS10_ExpensePage-ExpenseList.png)
+
+### Report Page
+
+![Demonstration of a user going through an interactive finance tracker, searching for monthly report, then logout and over](./public/assets/images/SS12_ReportResultPage.png)
 
 <br>
 
@@ -48,46 +58,56 @@ Click on the cow [🐮](https://cash-cow-finance-8e34336f910f.herokuapp.com/) to
 
 ## Technology
 
-The application utilizes a range of technogies to delivere its functionality. These include: 
-- Back-End Technologies: 
-    - Node.js: JavaScript runtime
-    - Express: web application framework for Node.js
+The application utilizes a range of technogies to delivere its functionality. These include:
+
+- Back-End Technologies:
+
+  - Node.js: JavaScript runtime
+  - Express: web application framework for Node.js
 
 - Front-End Technologies:
-    - Bulma: enehance the visual appearance and layout of the application
-    - Animate.CSS: incorporate animations to the webpage
+
+  - Bulma: enehance the visual appearance and layout of the application
+  - Animate.CSS: incorporate animations to the webpage
 
 - Templating Engine:
-    - Handlebars: generate dynamic HTML templates on the server-side
+
+  - Handlebars: generate dynamic HTML templates on the server-side
 
 - Data Visualization
-    - Chart.js: create chart for presenting financial data
 
-- Database: 
-    - MySQL: handle and store data
+  - Chart.js: create chart for presenting financial data
+
+- Database:
+
+  - MySQL: handle and store data
 
 - Object-Relational Mapping
-    - Sequelize: interact with the MySQL database
+
+  - Sequelize: interact with the MySQL database
 
 - Environmental Variables:
-    - Dotenv: access sensitve configuration variables
 
-- Encryption: 
-    - Bcrypt: secure password hasing and encryption
+  - Dotenv: access sensitve configuration variables
+
+- Encryption:
+
+  - Bcrypt: secure password hasing and encryption
 
 - Deployment:
-    - Heroku: host and deploy the application
+  - Heroku: host and deploy the application
 
 <br>
 
 ## Additional Features to Consider
 
 Here are some additional features to consider or implement in the future. These include:
-1. hi
-2. i
-3. am
-4. a list
-5. of future considerations
+
+1. Tags and Labels: Allow users to assign custom tags or labels to their expenses, making it easier to filter and search for specific transactions.
+2. Bill Reminders: Send users notifications or reminders for upcoming bill payments to help them stay organized and avoid late fees.
+3. Multiple Accounts: Support multiple accounts within the expense tracker, enabling users to track expenses separately for personal, business, or shared accounts.
+4. Attachments: Enable users to attach files or images (e.g., receipts, invoices) to their expense entries for better record-keeping and reference.
+5. Expense Notifications: Send users notifications or alerts when they exceed budget limits, encounter unusual spending patterns, or approach bill due dates.
 
 <br>
 
