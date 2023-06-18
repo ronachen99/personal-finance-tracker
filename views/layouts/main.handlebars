@@ -18,6 +18,7 @@
   <link rel='stylesheet' href='./css/jass.css' />
   {{!-- <!-- Link to CSS file "style.css"--> --}}
   <link rel='stylesheet' href='./css/style.css' />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>Cash Cow Finance Tracker</title>
 </head>
 
@@ -35,7 +36,7 @@
           </p>
         </div>
       </div>
-      {{#if logged_in}}
+      {{#if logged_in }}
       <nav class="navbar is-fullwidth">
         <div class="navbar-brand">
           <span class="navbar-burger burger" data-target="navbarMenu">
@@ -66,12 +67,12 @@
     {{!-- <!-- Render the sub layout --> --}}
     {{{body}}}
   </main>
-  {{!-- <!-- Custom JavaScript file "navbar.js" --> --}}
-  <script src='./js/navbar.js'></script>
-  {{!-- <!-- Render script for logged in users only --> --}}
-  {{#if logged_in}}
-  <script src='./js/logout.js'></script>
-  {{/if}}
+  {{!-- < !--Custom JavaScript file "navbar.js" --> --}}
+    <script src='./js/navbar.js'></script>
+    {{!-- <!-- Render script for logged in users only --> --}}
+    {{#if logged_in}}
+    <script src='./js/logout.js'></script>
+    {{/if}}
 </body>
 
 </html>

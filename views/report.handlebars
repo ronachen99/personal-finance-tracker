@@ -1,5 +1,5 @@
 <div class='container'>
-    <div class='cow'>
+    <div class='moo'>
         <h2>moontly report</h2>
         <form id='new-report'>
             <div class='field has-addons'>
@@ -47,7 +47,7 @@
 </div>
 
 <div class='container'>
-    <div class='cow'>
+    <div class='moo'>
         <!-- Display income data -->
         <h2>income</h2>
         {{#if incomes.length}}
@@ -70,7 +70,7 @@
     </div>
 </div>
 <div class='container'>
-    <div class='cow'>
+    <div class='moo'>
         <!-- Display expense data -->
         <h2>expenses</h2>
         {{#if expenses.length}}
@@ -94,10 +94,19 @@
 </div>
 
 <div class='container'>
-    <div class='cow'>
+    <div class='moo'>
         <!-- Display chart data -->
         <h2>chart</h2>
-
+        <p>click on the income or expense label to hide it from the donut 🍩</p>
+        <p>values are in $</p>
+        {{#if incomes.length}}
+        <div class="chart-container">
+            <canvas data-income={{incomes.[0].totalIncome}} data-expense={{expenses.[0].totalExpense}}
+                class="financeComparison"></canvas>
+        </div>
+        {{else}}
+        <p>nothin' to compare pal</p>
+        {{/if}}
     </div>
 </div>
 
