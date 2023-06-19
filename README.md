@@ -28,25 +28,19 @@ The objective behind this application is to develop a web-based platform enbalin
 ## Demonstration
 
 Application Demonstration:\
-Watch it on [Google Drive](https://drive.google.com/file/d/1hGhDxQ8W1MZIz4pS4DPlYim5_tXz3xx9/view).
+Watch it on [Google Drive](https://drive.google.com/file/d/1or1YFNf90JH2t7MrlcxDIUbJeOY5uJy9/view?usp=sharing)🐮
 
-Application Preview:\
+Application Preview:
 
-### Login Page
-
-![Demonstration of a user going through an interactive finance tracker, logging in and starting over](./public/assets/images/SS2_LoginPage.png)
+![User going through an interactive finance tracker and starting over.](./public/assets/images/Cash%20Cow%20Finance.gif)
 
 ### Income Page
 
-![Demonstration of a user going through an interactive finance tracker, adding and deleting an income and starting over](./public/assets/images/SS7_IncomePage-IncomeList.png)
-
-### Expense Page
-
-![Demonstration of a user going through an interactive finance tracker, adding and deleting an expense and starting over](./public/assets/images/SS10_ExpensePage-ExpenseList.png)
+![User going through an interactive finance tracker, adding and deleting an income.](./public/assets/images/SS7_IncomePage-IncomeList.png)
 
 ### Report Page
 
-![Demonstration of a user going through an interactive finance tracker, searching for monthly report, then logout and over](./public/assets/images/SS12_ReportResultPage.png)
+![User going through an interactive finance tracker and searching for monthly report.](./public/assets/images/SS12_ReportResultPage.png)
 
 <br>
 
