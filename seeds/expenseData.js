@@ -1,5 +1,7 @@
+// Import the Expense model from the models directory
 const { Expense } = require('../models');
 
+// Defining an array of expense data objects
 const expenseData = [
   {
     name: 'Groceries',
@@ -18,5 +20,6 @@ const expenseData = [
   }
 ];
 
+// Define the function to seed the Expense table with the expenseData array
 const seedExpense = () => Expense.bulkCreate(expenseData);
 module.exports = seedExpense;

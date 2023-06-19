@@ -1,9 +1,11 @@
 <div class="container">
+  {{!-- If the user is logged in they will see an image of a cow flip in to view --}}
   <div {{#if logged_in}} class="cow">
     <div class="columns">{{/if}}
       <div class="animate__animated animate__flipInX column is-flex is-justify-content-center">
         <img src='./assets/images/cowpic.jpg' alt='Cow with money and sunglasses' />
       </div>
+      {{!-- If the user is logged in, display a welcome back (user's name) message, as well as our landing page about text --}}
       {{#if logged_in}}
       <div class="column">
         <h2>welcome back {{name}} 🥸</h2>
@@ -21,7 +23,7 @@
           and welcome to a world of financial prosperity!</p>
       </div>
     </div>
-
+{{!-- If the user is not logged in, display a button saying "HOWDY" that directs them to the login page --}}
     {{else}}
     <div class="is-flex is-justify-content-center is-align-items-end">
       <a href='/login' id='home-login' class='button is-rounded is-warning' role='button'>HOWDY</a>

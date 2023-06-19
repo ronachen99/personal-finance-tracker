@@ -1,25 +1,46 @@
 <div class='cow col-md-6'>
   <h2>sign up</h2>
+  {{! This form holds all of the sign up fields }}
   <form class='form signup-form'>
-    <div class="field">
+    <div class='field'>
       <label for='name-signup' class='form-label label'>name</label>
-      <div class="control">
-        <input id='name-signup' class="input form-control is-dark" type="text" placeholder="Moo Moo" />
+      <div class='control'>
+        <input
+          id='name-signup'
+          class='input form-control is-dark'
+          type='text'
+          placeholder='Moo Moo'
+        />
       </div>
     </div>
-    <div class="field">
-      <label for='email-signup' class="form-label label">email</label>
-      <div class="control">
-        <input id='email-signup' class="form-control input is-dark" type="email" placeholder="moomoo@gmail.com" />
+    <div class='field'>
+      <label for='email-signup' class='form-label label'>email</label>
+      <div class='control'>
+        <input
+          id='email-signup'
+          class='form-control input is-dark'
+          type='email'
+          placeholder='moomoo@gmail.com'
+        />
       </div>
     </div>
-    <div class="field">
+    <div class='field'>
       <label for='password-signup' class='form-label label'>password</label>
-      <div class="control"><input id='password-signup' class="form-control input is-dark" type="password"
-          placeholder="super secret secret (must be 8 characters+)"></div>
+      <div class='control'><input
+          id='password-signup'
+          class='form-control input is-dark'
+          type='password'
+          placeholder='super secret secret (must be 8 characters+)'
+        /></div>
     </div>
-    <div class="buttons is-right">
-      <a href='/login' class='button is-warning is-rounded' id='btnhover' role='button'>TAKE ME TO SIGN IN</a>
+    <div class='buttons is-right'>
+      {{! This button redirects the user to the login page }}
+      <a
+        href='/login'
+        class='button is-warning is-rounded'
+        id='btnhover'
+        role='button'
+      >TAKE ME TO SIGN IN</a>
       <button type='submit' class='button is-rounded is-dark'>SIGN UP</button>
     </div>
   </form>

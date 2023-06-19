@@ -6,6 +6,7 @@
                 <div class='control is-expanded'>
                     <div class='select is-dark is-fullwidth is-rounded'>
                         <select id='month' name='month'>
+                            {{!-- These twelve options represent the months of the year --}}
                             <option selected>select month</option>
                             <option value='1'>1</option>
                             <option value='2'>2</option>
@@ -25,6 +26,7 @@
                 <div class='control is-expanded'>
                     <div class='select is-dark is-fullwidth is-rounded'>
                         <select id='year' name='year'>
+                            {{!-- These options represent the year choices --}}
                             <option selected>select year</option>
                             <option value='2023'>2023</option>
                             <option value='2022'>2022</option>
@@ -40,6 +42,7 @@
                 </div>
             </div>
             <div class="buttons is-right">
+                {{!-- This button displays the financial information gathered from the options above --}}
                 <button type="submit" class="button is-outlined is-rounded is-dark">show me mooney</button>
             </div>
         </form>

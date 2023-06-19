@@ -1,78 +1,97 @@
 <html lang='en'>
 
-<head>
-  <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  {{!-- <!-- Preconnect to Google Fonts --> --}}
-  <link rel='preconnect' href='https://fonts.googleapis.com' />
-  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-  {{!-- <!-- Link to the first font (Moo Lah Lah) --> --}}
-  <link href='https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap' rel='stylesheet' />
-  {{!-- <!-- Link to the second font (Patrick Hand) --> --}}
-  <link href='https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap' rel='stylesheet' />
-  {{!-- <!-- Link to Bulma framework--> --}}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  {{!-- <!-- Link to Animate.CSS --> --}}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  {{!-- <!-- Link to CSS file "jass.css"--> --}}
-  <link rel='stylesheet' href='./css/jass.css' />
-  {{!-- <!-- Link to CSS file "style.css"--> --}}
-  <link rel='stylesheet' href='./css/style.css' />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <title>Cash Cow Finance Tracker</title>
-</head>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    {{! <!-- Preconnect to Google Fonts --> }}
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    {{! <!-- Link to the first font (Moo Lah Lah) --> }}
+    <link
+      href='https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap'
+      rel='stylesheet'
+    />
+    {{! <!-- Link to the second font (Patrick Hand) --> }}
+    <link
+      href='https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap'
+      rel='stylesheet'
+    />
+    {{! <!-- Link to Bulma framework--> }}
+    <link
+      rel='stylesheet'
+      href='https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css'
+    />
+    {{! <!-- Link to Animate.CSS --> }}
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'
+    />
+    {{! <!-- Link to CSS file "jass.css"--> }}
+    <link rel='stylesheet' href='./css/jass.css' />
+    {{! <!-- Link to CSS file "style.css"--> }}
+    <link rel='stylesheet' href='./css/style.css' />
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+    <title>Cash Cow Finance Tracker</title>
+  </head>
 
-
-<body>
-  <header>
-    <section class="hero is-black is-small">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <p class="title">
-          <h1><a href='/'><span class="cash">Cash</span> Cow</a></h1>
-          </p>
-          <p class="animate__animated animate__rubberBand subtitle">
-            MOOre MOOney Please
-          </p>
-        </div>
-      </div>
-      {{#if logged_in }}
-      <nav class="navbar is-fullwidth">
-        <div class="navbar-brand">
-          <span class="navbar-burger burger" data-target="navbarMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        <div id="navbarMenu" class="navbar-menu">
-          <div class="animate__animated animate__fadeIn cash navbar-start is-flex is-justify-content-space-between">
-            <a class="navbar-item" href="/">HOME</a>
-            <a class="navbar-item" href="/income">INCOME</a>
-            <a class="navbar-item" href="/expense">EXPENSE</a>
-            <a class="navbar-item" href="/report">REPORT</a>
+  <body>
+    <header>
+      {{! Adding structure and style to the header}}
+      <section class='hero is-black is-small'>
+        <div class='hero-body'>
+          <div class='container has-text-centered'>
+            <p class='title'>
+              <h1><a href='/'><span class='cash'>Cash</span> Cow</a></h1>
+            </p>
+            <p class='animate__animated animate__rubberBand subtitle'>
+              MOOre MOOney Please
+            </p>
           </div>
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <button class="animate__animated animate__fadeIn is-warning button is-rounded" id="logout">LOGOUT</button>
+        </div>
+        {{! If the user is logged in, the navbar will be visible }}
+        {{#if logged_in}}
+          <nav class='navbar is-fullwidth'>
+            <div class='navbar-brand'>
+              <span class='navbar-burger burger' data-target='navbarMenu'>
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
             </div>
-          </div>
-        </div>
-      </nav>
-      {{/if}}
-    </section>
-  </header>
-  <main>
-    <div class="modal dark-cow" id="logoutModal"></div>
-    {{!-- <!-- Render the sub layout --> --}}
-    {{{body}}}
-  </main>
-  {{!-- < !--Custom JavaScript file "navbar.js" --> --}}
+            <div id='navbarMenu' class='navbar-menu'>
+              <div
+                class='animate__animated animate__fadeIn cash navbar-start is-flex is-justify-content-space-between'
+              >
+                <a class='navbar-item' href='/'>HOME</a>
+                <a class='navbar-item' href='/income'>INCOME</a>
+                <a class='navbar-item' href='/expense'>EXPENSE</a>
+                <a class='navbar-item' href='/report'>REPORT</a>
+              </div>
+              <div class='navbar-end'>
+                <div class='navbar-item'>
+                  <button
+                    class='animate__animated animate__fadeIn is-warning button is-rounded'
+                    id='logout'
+                  >LOGOUT</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+        {{/if}}
+      </section>
+    </header>
+    <main>
+      {{! div to display the logout modal }}
+      <div class='modal dark-cow' id='logoutModal'></div>
+      {{! <!-- Render the sub layout --> }}
+      {{{body}}}
+    </main>
+    {{! < !--Custom JavaScript file "navbar.js" --> }}
     <script src='./js/navbar.js'></script>
-    {{!-- <!-- Render script for logged in users only --> --}}
+    {{! <!-- Render script for logged in users only --> }}
     {{#if logged_in}}
-    <script src='./js/logout.js'></script>
+      <script src='./js/logout.js'></script>
     {{/if}}
-</body>
+  </body>
 
 </html>

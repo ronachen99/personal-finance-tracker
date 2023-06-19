@@ -1,10 +1,13 @@
+// Import the required libraries
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Expense, Income } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Set up the route for the homepage
 router.get('/', async (req, res) => {
   try {
+    // Check to see if the user is logged in, find them by their ID and excluse the pw attribute
     if (req.session.logged_in) {
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] }
@@ -22,6 +25,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Set up the route for user login
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -31,6 +35,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Set up the route for user signup
 router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -40,7 +45,7 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-//Use withAuth middleware to prevent access to route
+// Set up the user expense route, use withAuth middleware to prevent access to route
 router.get('/expense', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -60,6 +65,7 @@ router.get('/expense', withAuth, async (req, res) => {
   }
 });
 
+// Set up the user income route, use withAuth middleware to prevent access to route
 router.get('/income', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -79,6 +85,7 @@ router.get('/income', withAuth, async (req, res) => {
   }
 });
 
+// Set up the user report route, use withAuth middleware to prevent access to route
 router.get('/report', withAuth, async (req, res) => {
   const { month, year } = req.query;
   if (!month || !year) {
@@ -89,6 +96,7 @@ router.get('/report', withAuth, async (req, res) => {
     }
   } else {
     try {
+      // Find all of the income data for the user in the chosen month & year
       const incomeData = await Income.findAll({
         where: {
           user_id: req.session.user_id,
@@ -97,6 +105,7 @@ router.get('/report', withAuth, async (req, res) => {
         },
         attributes: {
           include: [
+            // Calculate total incomes for chosen month & year
             [
               sequelize.literal(
                 `(SELECT SUM(amount) FROM income WHERE user_id = ${req.session.user_id} AND month = '${req.query.month}' AND year = '${req.query.year}')`
@@ -108,6 +117,7 @@ router.get('/report', withAuth, async (req, res) => {
       });
       const incomes = incomeData.map((income) => income.get({ plain: true }));
 
+      // Find all expense data for the chosen month & year
       const expenseData = await Expense.findAll({
         where: {
           user_id: req.session.user_id,
@@ -116,6 +126,7 @@ router.get('/report', withAuth, async (req, res) => {
         },
         attributes: {
           include: [
+            // Calculate total expenses for chosen month & year
             [
               sequelize.literal(
                 `(SELECT SUM(amount) FROM expense WHERE user_id = ${req.session.user_id} AND month = '${req.query.month}' AND year = '${req.query.year}')`
@@ -130,6 +141,7 @@ router.get('/report', withAuth, async (req, res) => {
         expense.get({ plain: true })
       );
 
+      // Render the report with both income & expense data
       res.render('report', {
         incomes,
         expenses,
